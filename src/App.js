@@ -4,8 +4,10 @@ import { connect } from "react-redux";
 import {
   incrementCounter,
   decrementCounter,
-  clearCounter
+  clearCounter,
+  getStarWarsPeople
 } from "./redux/counterActions";
+
 function App(props) {
   return (
     <div className="App">
@@ -15,14 +17,21 @@ function App(props) {
       <button onClick={props.decrementCounter}>-</button>
       <br />
       <button onClick={props.clearCounter}>Clear Counter</button>
+      <br />
+      <h3>StarWars :{props.people}</h3>
+      <button onClick={props.getStarWarsPeople}>Get Star-Warrior's Name</button>
     </div>
   );
 }
-const mapStateToProps = globalState => ({ count: globalState });
+const mapStateToProps = globalState => ({
+  count: globalState.count,
+  people: globalState.starWarsPeople
+});
 const mapDispatchToProps = {
   incrementCounter,
   decrementCounter,
-  clearCounter
+  clearCounter,
+  getStarWarsPeople
 };
 export default connect(
   mapStateToProps,
