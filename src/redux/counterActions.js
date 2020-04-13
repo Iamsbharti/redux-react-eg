@@ -4,3 +4,7 @@ export function incrementCounter() {
 export function decrementCounter() {
   return { type: "DECREMENT" };
 }
+
+export function clearCounter() {
+  return { type: "CLEAR" };
+}

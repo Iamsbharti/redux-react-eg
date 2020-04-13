@@ -4,6 +4,8 @@ export default function counterReducers(counter = 0, action) {
       return counter + 1;
     case "DECREMENT":
       return counter - 1;
+    case "CLEAR":
+      return 0;
     default:
       return counter;
   }
